@@ -11,6 +11,8 @@ public class Main {
             Mapa_test.generujmape();
         } catch (FileNotFoundException f) {
 
+        } finally {
+            System.out.println("Hello");
         }
         Dane dane = new Dane();
         dane.run();
