@@ -7,15 +7,15 @@ public class Program {
 
     private int liczba_linii;
     private int dlugosc_linii;
-    private int rozmiarDanych = znajdzRozmiarDanych();
-    private String[] timestampy = new String[rozmiarDanych];
+    private final int rozmiarDanych = znajdzRozmiarDanych();
+    private int[] timestampy = new int[rozmiarDanych];
     private String[] kierowcy = new String[rozmiarDanych];
     int[][] mapa;
     String dane = "";
 
     public int getRozmiarDanych() { return rozmiarDanych; }
 
-    public String[] getTimestampy() { return timestampy; }
+    public int[] getTimestampy() { return timestampy; }
 
     public String[] getKierowcy() { return kierowcy; }
 
@@ -74,9 +74,11 @@ public class Program {
 
 
                 String linia = odczyt.nextLine();
-                String[] podzielona_linia = linia.split(",", 3);   //dziele linie na 3 czesci, trzecia to miesko, czyli cyferki
+                linia = linia.replace(".", ",");
+                String[] podzielona_linia = linia.split(",", 3);
+                //String[] podzielona_linia = linia.split("\\p{Punct}", 3);   //dziele linie na 3 czesci, trzecia to miesko, czyli cyferki
                 String miesko = podzielona_linia[2];
-                timestampy[j] = podzielona_linia[0];
+                timestampy[j] = Integer.valueOf(podzielona_linia[0]);
                 kierowcy[j] = podzielona_linia[1];
                 miesko = miesko.replaceAll("[^-?0-9]+", " ");     //stackoverflow to wspaniale miejsce <3
                 miesko = miesko.trim();           //przycina spacje na poczatku i koncu

@@ -156,6 +156,8 @@ public class Dijkstra {
     private static int zwrocKombinacje(int liczba_paczek){      //do zwrocenia liczby kombinacji tras miedzy paczkami
         if (liczba_paczek == 1)
             return 1;
+        else if (liczba_paczek == 0)
+            return 0;
         return liczba_paczek * zwrocKombinacje(liczba_paczek-1);
     }
 
@@ -254,7 +256,7 @@ public class Dijkstra {
         Dijkstra.setLiczba_wierzcholkow(dlugosc_linii * (liczba_linii+1) /2);
         Program program = new Program(liczba_linii, dlugosc_linii);
         program.wczytajMape();
-        String[] timestampy = program.getTimestampy();
+        int[] timestampy = program.getTimestampy();
         String[] kierowcy = program.getKierowcy();
         int[][] dane= program.wczytajDane();        //nieparzyste liczby - pozycja w wierszu, parzyste - pozycja w kolumnie
 
@@ -376,69 +378,92 @@ public class Dijkstra {
 
 
 //---------------------------------------------TESTY--------------------------------------------------//
+        ArrayList<String> bledy = new ArrayList<>(10);
+        int[] kombinacje = new int[8];
+        int[] najlepsza_waga = new int[program.getRozmiarDanych()];
+        for (int i = 0; i < kombinacje.length; i++) {
+            kombinacje[i] = Dijkstra.zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
+        }
         //przykladowe punkty 1 -> 12 -> 7 -> 24 -> 11 -> 1                  TODO po ogarnieciu pobierania paczek z pliku do usuniecia - ale zajme sie tym :)
-        int[] przykladowe = new int[4];                                     //to sie dobrze sprawdzilo jako wstepne testy
-//        przykladowe[0] = 11;
-//        przykladowe[1] = 6;
-//        przykladowe[2] = 23;
-//        przykladowe[3] = 10;
+        outerloop:
+        for (int k=0; k<program.getRozmiarDanych(); k++) {
+            int[] przykladowe = new int[paczki_punkty.get(k).size()];                                     //to sie dobrze sprawdzilo jako wstepne testy
+            //        przykladowe[0] = 11;
+            //        przykladowe[1] = 6;
+            //        przykladowe[2] = 23;
+            //        przykladowe[3] = 10;
 
-        for (int j=0; j<program.getRozmiarDanych(); j++) {
 
-            int[] liczba_paczek = new int[paczki_punkty.get(j).size()];
-            for (int i = 0; i < liczba_paczek.length; i++) {
-                przykladowe[0] = paczki_punkty.get(0).get(0);
+            int liczba_kombinacji = kombinacje[przykladowe.length];         //przechowuje aktualna liczbe kombinacji dla danego wykonania petli, zeby kod byl bardziej czytelny
+            int liczba_paczek = przykladowe.length;
+            for (int i = 0; i < liczba_paczek; i++) {
+                if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) >0)
+                    przykladowe[i] = paczki_punkty.get(k).get(i);
+                else {
+                    bledy.add("Blad w " + (k+1) + " linii danych wejsciowych");
+                    continue outerloop;
+                }
             }
-        }
 
+            int[][] cele = new int[liczba_kombinacji][liczba_paczek + 1];            //+1 bo jeszcze zostawie '0' na baze
+            Dijkstra.permutacje(przykladowe, 0, cele);                    //wszystkie kombinacje wpisuje do 'cele'
+            Dijkstra.licznik_permutacji =0;
 
-        int kombinacje = Dijkstra.zwrocKombinacje(liczba_paczek);       //zwroci liczbe kombinacji sciezek
-        int[][] cele = new int[kombinacje][liczba_paczek+1];            //+1 bo jeszcze zostawie '0' na baze
-        Dijkstra.permutacje(przykladowe,0,cele);                    //wszystkie kombinacje wpisuje do 'cele'
+            int[] wagi = new int[liczba_kombinacji];      //  wagi dla kazdej mozliwej kombinacji
 
-        int[] wagi = new int[kombinacje];      //  wagi dla kazdej mozliwej kombinacji
-
-        for (int j=0; j<kombinacje; j++){               //j - kombinacje z permutacji
-            for (int i=0; i<cele[j].length-1; i++){         //i - kolejne punkty z danej kombinacji
-                wagi[j] += najkrocej[cele[j][i]].odleglosci[cele[j][i+1]];
+            for (int j = 0; j < liczba_kombinacji; j++) {               //j - kombinacje z permutacji
+                for (int i = 0; i < (cele[j].length - 1); i++) {         //i - kolejne punkty z danej kombinacji
+                    wagi[j] += najkrocej[cele[j][i]].odleglosci[cele[j][i + 1]];
+                }
+                wagi[j] += najkrocej[cele[j][cele[j].length-1]].odleglosci[0];      //na koncu dodaj jeszcze wage na powrot
             }
-        }
 
-        //przypisanie najlepszej wagi i indeksu dla ktorej kombinacji wystapila
-        int najlepsza_waga = wagi[0];
-        int indeks =0;
-        for( int i=1; i<kombinacje; i++){
-            if (najlepsza_waga > wagi[i]){
-                najlepsza_waga = wagi[i];
-                indeks = i;
+            //przypisanie najlepszej wagi i indeksu dla ktorej kombinacji wystapila
+
+            if (wagi.length >0)
+                najlepsza_waga[k] = wagi[0];
+            int[] indeks = new int[program.getRozmiarDanych()];
+            for (int i = 1; i < liczba_kombinacji; i++) {
+                if (najlepsza_waga[k] > wagi[i]) {
+                    najlepsza_waga[k] = wagi[i];
+                    indeks[k] = i;
+                }
             }
-        }
 
 
-        int[] tab = usunPowtorzenia(cele[indeks]); //z najlepszej kombinacji usuwa sie powtorzenia
-        int[] punkty = new int[tab.length +1];              //przechowuje ta jedna, najlepsza sciezke :O
-        ArrayList<Integer> droga = new ArrayList<Integer>((int)((liczba_paczek+1) * (Math.sqrt(liczba_paczek)-1)*2));         //mniej wiecej oszacowana typowa dlugosc drogi
+            int[] tab = usunPowtorzenia(cele[indeks[k]]); //z najlepszej kombinacji usuwa sie powtorzenia
+            int[] punkty = new int[tab.length + 1];              //przechowuje ta jedna, najlepsza sciezke :O
+            ArrayList<Integer> droga = new ArrayList<Integer>((int) ((liczba_paczek + 1) * (Math.sqrt(liczba_paczek) - 1) * 2));         //mniej wiecej oszacowana typowa dlugosc drogi
 
 
-        for (int i=0; i<tab.length; i++){
-            punkty[i] = tab[i];             //punkty[] ma '0' jeszcze na koncu, czyli baze
-        }
-
-
-
-                                    // ***      Zapisuje najlepsza droge    ***
-        for (int j=0; j<punkty.length -1; j++) {
-            for (int i = 0; i < najkrocej[punkty[j]].punkty.get(punkty[j + 1]).size(); i++) {       //droga okreslona przez punkty
-                droga.add(najkrocej[punkty[j]].punkty.get(punkty[j+1]).get(i));
+            for (int i = 0; i < tab.length; i++) {
+                punkty[i] = tab[i];             //punkty[] ma '0' jeszcze na koncu, czyli baze
             }
-        }
-        System.out.println("Najlepsza droga");
-        for (int i=0; i<droga.size(); i++){
-            System.out.print(droga.get(i) + " ");
-        }
-        System.out.println();
-        System.out.println("\n\n\n");
 
+
+            // ***      Zapisuje najlepsza droge    ***
+            for (int j = 0; j < punkty.length - 1; j++) {
+                for (int i = 0; i < najkrocej[punkty[j]].punkty.get(punkty[j + 1]).size(); i++) {       //droga okreslona przez punkty
+                    droga.add(najkrocej[punkty[j]].punkty.get(punkty[j + 1]).get(i));
+                }
+            }
+
+                                                                                                                //Wypisywanie
+            System.out.println((k+1) +". " + "Najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ")");
+            System.out.println("A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to:");
+            for (int i = 0; i < droga.size(); i++) {
+                System.out.print(droga.get(i) + " ");
+            }
+            System.out.println();
+            System.out.println("\n\n\n");
+
+        }
+        double srednia_waga =0;                                                           //srednia waga
+        for (int i=0; i<program.getRozmiarDanych(); i++){
+            srednia_waga += najlepsza_waga[i];
+        }
+        srednia_waga = srednia_waga / (program.getRozmiarDanych() - bledy.size());
+        System.out.println("Srednia waga tras dla wszystkich danych wyjsciowych wynosi: " + srednia_waga);
 
 
 
@@ -499,5 +524,9 @@ public class Dijkstra {
 //
 //            System.out.println();
 //        }
+        System.out.println("\nBLEDY:");
+        for (int i=0; i< bledy.size(); i++){
+            System.out.println(bledy.get(i));
+        }
     }
 }
