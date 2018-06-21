@@ -5,7 +5,7 @@ public class Graf {
     private int liczba_krawedzi;
     private List<Krawedz>[] lista_sasiedztwa;       //bedzie wyswietlac krawedzie
                                                     //dla danego wierzcholka
-//konstruktor
+
     public Graf(int liczba_wierzcholkow){
         this.liczba_wierzcholkow = liczba_wierzcholkow;
         this.liczba_krawedzi = 0;

@@ -9,14 +9,14 @@ public class Generator {
     private JButton generujMapęButton;
     private JButton generujDaneButton;
     private Dane dane;
-    private Mapa mapa;
+    private Mapa_test mapa;
 
     public Generator() {
         generujMapęButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Mapa.generujmape();
+                    Mapa_test.generujmape();
                 } catch (FileNotFoundException f) {
 
                 }

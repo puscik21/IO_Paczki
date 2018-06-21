@@ -5,32 +5,55 @@ import java.util.Scanner;
 
 public class Program {
 
-    private int liczba_linii;
-    private int dlugosc_linii;
+    private static int liczba_linii;
+    private static int dlugosc_linii;
+    private static int liczba_wierzcholkow;
     private final int rozmiarDanych = znajdzRozmiarDanych();
     private int[] timestampy = new int[rozmiarDanych];
     private String[] kierowcy = new String[rozmiarDanych];
-    int[][] mapa;
-    String dane = "";
+    int[][] mapa;                                                       //TODO meczyc to na private?
+    private String dane = "";
 
-    public int getRozmiarDanych() { return rozmiarDanych; }
+    int getRozmiarDanych() { return rozmiarDanych; }
 
-    public int[] getTimestampy() { return timestampy; }
+    int[] getTimestampy() { return timestampy; }
 
-    public String[] getKierowcy() { return kierowcy; }
+    String[] getKierowcy() { return kierowcy; }
 
+    static int getLiczba_linii() {
+        liczba_linii =0;
+        dlugosc_linii =0;
+        Program.znajdzWielkoscMapy();
+        return liczba_linii;
+    }
 
-    public Program(int liczba_linii, int dlugosc_linii) {
-        this.liczba_linii = liczba_linii;
-        this.dlugosc_linii = dlugosc_linii;
+    static int getDlugosc_linii() {
+        liczba_linii =0;
+        dlugosc_linii =0;
+        Program.znajdzWielkoscMapy();
+        return dlugosc_linii;
+    }
+
+    static int getLiczba_wierzcholkow() {
+        liczba_linii =0;
+        dlugosc_linii =0;
+        Program.znajdzWielkoscMapy();
+        liczba_wierzcholkow = dlugosc_linii * (liczba_linii+1) /2;
+        return liczba_wierzcholkow;
+    }
+
+    public Program() {
+        liczba_linii =0;
+        dlugosc_linii =0;
+        Program.znajdzWielkoscMapy();
         mapa = new int[dlugosc_linii][liczba_linii];
     }
 
 
-    public void wczytajMape() {
+    void wczytajMape() {
         String linia;
         try {
-            Scanner odczyt = new Scanner(new File("mapa_mati.txt"));            //zmieniajac plik trzeba zmienic jeszcze w Dijkstrze w "znajdzWielkoscMapy"
+            Scanner odczyt = new Scanner(new File("mapa_mati.txt"));
             while (odczyt.hasNext()) {
                 for (int j = 0; j < liczba_linii; j++) {
                     linia = odczyt.nextLine();
@@ -39,18 +62,27 @@ public class Program {
                     }
                 }
             }
-//            for (int j=0; j<liczba_linii; j++){           //wyswietla mape, ale jak patrzylem tak zgrubsza, to to dziala :)
-//                for (int i=0; i<dlugosc_linii; i++){
-//                    System.out.print(mapa[i][j] + " ");
-//                }
-//                System.out.println();
-//            }
         } catch (FileNotFoundException f) {
             System.out.println("No nie udalo sie, kurczaki!");
         }
     }
 
-    public int znajdzRozmiarDanych(){
+    static void znajdzWielkoscMapy(){
+        String linia;
+        try {
+            Scanner odczyt = new Scanner(new File("mapa_mati.txt"));
+            while (odczyt.hasNext()){
+                linia = odczyt.nextLine();
+                liczba_linii++;
+                dlugosc_linii = linia.length();
+            }
+
+        } catch (FileNotFoundException f) {
+            System.out.println("No nie udalo sie, kurczaki!");
+        }
+    }
+
+    int znajdzRozmiarDanych(){           //zwraca liczbe linii danych
         int licznik =0;
         try{
             Scanner odczyt = new Scanner(new File("dane_mati.txt"));
@@ -64,7 +96,7 @@ public class Program {
         return licznik;
     }
 
-    public int[][] wczytajDane() {                          //TODO jeszcze dorobic uzycie pobranego timestampa i nazwy kierowcy
+    int[][] wczytajDane() {
         int liczba_linii = rozmiarDanych;
 
         int[][] liczby = new int[liczba_linii][0];
@@ -76,7 +108,6 @@ public class Program {
                 String linia = odczyt.nextLine();
                 linia = linia.replace(".", ",");
                 String[] podzielona_linia = linia.split(",", 3);
-                //String[] podzielona_linia = linia.split("\\p{Punct}", 3);   //dziele linie na 3 czesci, trzecia to miesko, czyli cyferki
                 String miesko = podzielona_linia[2];
                 timestampy[j] = Integer.valueOf(podzielona_linia[0]);
                 kierowcy[j] = podzielona_linia[1];
@@ -98,30 +129,6 @@ public class Program {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-                                                                        //stara wersja
-//    int[][] mapa = new int[50][99];
-//
-//    void wczytajmape() {
-//        try {
-//            Scanner odczyt = new Scanner(new File("mapa.txt"));
-//            for (int j = 0; j < 99; j++) {
-//                for (int i = 0; i < 50; i++) {
-//                    mapa[i][j] = odczyt.nextInt();
-//                }
-//            }
-//        } catch (FileNotFoundException f) {}
-//    }
 
     void wczytajdane() {
         try {

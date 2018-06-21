@@ -68,7 +68,7 @@ public class Dijkstra {
 
     }
 
-    //----------------------Klasa glowna------------------------------//
+                            //----------------------Klasa glowna------------------------------//
 
     private Krawedz[] najblizsza_krawedz; //krawedz z ktorej jest najblizej
     private Integer[] najmniejsza_odleglosc;
@@ -76,6 +76,7 @@ public class Dijkstra {
     private static int liczba_linii;
     private static int dlugosc_linii;
     private static int liczba_wierzcholkow;
+    private static int licznik_permutacji =0;
 
     public static int getLiczba_linii() { return liczba_linii; }
 
@@ -134,12 +135,12 @@ public class Dijkstra {
         return najmniejsza_odleglosc[v];
     }
 
-    public boolean czyMaSciezkeDo(int v){
+    private boolean czyMaSciezkeDo(int v){
         return najmniejsza_odleglosc[v] < Integer.MAX_VALUE;
     }
 
     //jesli nie ma sciezki do danego wierzcholka zwroci pusta kolekcje
-    public Iterable<Krawedz> znajdzSciezkeDo(int v){
+    private Iterable<Krawedz> znajdzSciezkeDo(int v){
         Deque<Krawedz> sciezka = new ArrayDeque<Krawedz>();
         if(!czyMaSciezkeDo(v)){     //jesli nie ma sciezki zwroc pusta kolekcje
             return sciezka;
@@ -162,9 +163,9 @@ public class Dijkstra {
     }
 
 
-    static int licznik_permutacji =0;
+
     private static void permutacje(int[] arr, int index, int[][] target){       //permutacje potrzebne sa zeby wygenerowac kazda mozliwosc kolejnosc paczek
-                                                                        //aby pozniej je ze soba porownac i wybrac najkrotsza
+                                                                                //aby pozniej je ze soba porownac i wybrac najkrotsza
         if(index >= arr.length - 1){ //If we are at the last element - nothing left to permute
 
             for(int i = 1; i < arr.length; i++){
@@ -217,22 +218,6 @@ public class Dijkstra {
     }
 
 
-    public static void znajdzWielkoscMapy(){
-        String linia;
-        try {
-            Scanner odczyt = new Scanner(new File("mapa_mati.txt"));
-            while (odczyt.hasNext()){
-                linia = odczyt.nextLine();
-                liczba_linii++;
-                dlugosc_linii = linia.length();
-            }
-
-        } catch (FileNotFoundException f) {
-            System.out.println("No nie udalo sie, kurczaki!");
-        }
-    }
-
-
 
     //      ################################################             MAIN            ################################################       //
 
@@ -246,21 +231,21 @@ public class Dijkstra {
          *
          * jest tutaj jeszcze troche useful metod, jak np permutacje czy usuniecie powtorzen w tablicy
          *
-         * Polecam uzyc klasy Najkrocej do spisania sobie odleglosci i punktow
-         *
-         * TODO na koniec jak zostanie czasu to mozna przesledzic caly kod i pozmieniac wszystkie zmienne na PRIVATE, np w "Najkrocej" wiem ze nie ma
+         * Polecam uzyc klasy Najkrocej do spisania sobie odleglosci i punktow na sciezkach
          */
 
 
-        Dijkstra.znajdzWielkoscMapy();              //statyczna metoda; zwraca liczbe linii i dlugosc linii w pliku z mapa
+        liczba_linii = Program.getLiczba_linii();
+        dlugosc_linii = Program.getDlugosc_linii();
+        liczba_wierzcholkow = Program.getLiczba_wierzcholkow();
         Dijkstra.setLiczba_wierzcholkow(dlugosc_linii * (liczba_linii+1) /2);
-        Program program = new Program(liczba_linii, dlugosc_linii);
+        Program program = new Program();
         program.wczytajMape();
         int[] timestampy = program.getTimestampy();
         String[] kierowcy = program.getKierowcy();
         int[][] dane= program.wczytajDane();        //nieparzyste liczby - pozycja w wierszu, parzyste - pozycja w kolumnie
 
-        ArrayList<ArrayList<Integer>> paczki_punkty = new ArrayList<>(dane.length);     //dosyc dlugo glowkowalem jak zrobic to na zwyklej podwojnej tablicy, ale tak w sumie tez jest spoko TODO rozmiar program.getrozmiardanych
+        ArrayList<ArrayList<Integer>> paczki_punkty = new ArrayList<>(dane.length);
         for (int i=0; i<dane.length; i++){
             paczki_punkty.add(new ArrayList<>(4));
         }
@@ -268,27 +253,13 @@ public class Dijkstra {
         for (int j=0; j<dane.length; j++) {
             for (int i = 0; i < dane[j].length-1; i += 2) {
                 paczki_punkty.get(j).add(dane[j][i] + dane[j][i +1] * ((liczba_linii + 1) / 2));
-                //jesli dobrze rozumiem (liczba_linii+1)/2 wyznaczy liczbe wierszy
-                //powinno to przerobic podany zapis punktow na nasz
+                //(liczba_linii+1)/2 wyznaczy liczbe wierszy
+                //powinno to przerobic podany zapis punktow na ten uzywany przez nas
             }
         }
 
 
-
-
-//        for (int j=0; j<paczki_punkty.size(); j++) {                      //wyswietlanie wszystkich celow
-//            for (int i = 0; i < paczki_punkty.get(j).size(); i++) {
-//                System.out.print(paczki_punkty.get(j).get(i) + " ");
-//            }
-//            System.out.println();
-//        }
-
-        int liczba_wierzcholkow = Dijkstra.getLiczba_wierzcholkow();
-
-
         Graf graf = new Graf(liczba_wierzcholkow);
-
-
         int punkt = 0;                                      //   ***     wypelnienie grafu       ***
         for (int j=0; j<=liczba_linii-1; j+=2){
 
@@ -302,20 +273,6 @@ public class Dijkstra {
             }
         }
 
-
-//                                           //   ***     wypelnienie grafu       ***  //
-// int punkt = 0;                                      TODO zostawilem to bo jesli bys chcial to lepiej widac jak to dziala, ale do usuniecia jak sobie przejrzysz
-//        for (int j=0; j<=8; j+=2){
-//
-//            for (int i=0; i<5; i++){
-//                if ( (punkt+1) % 5 !=0 || punkt ==0)
-//                    graf.dodajKrawedz(new Krawedz(punkt,punkt+1, program.mapa[i][j]));
-//
-//                if (j!=8)                                           //dla ostatniej linijki nie dodawaj polaczen w pionie
-//                    graf.dodajKrawedz(new Krawedz(punkt,punkt+5, program.mapa[i][j+1]));
-//                punkt++;
-//            }
-//        }
                                                                     //  ***     wypelnienie grafu w druga strone    ***
         punkt = liczba_wierzcholkow-1;                 //ostatni punkt w grafie
         for (int j=liczba_linii-1; j>=0; j-=2){
@@ -330,30 +287,15 @@ public class Dijkstra {
             }
         }
 
-//        punkt = 24;                                 //  ***     wypelnienie grafu w druga strone    ***
-//        for (int j=8; j>=0; j-=2){                                TODO to samo co wyzej
-//
-//            for (int i=4; i>=0; i--){
-//                if (punkt % 5 !=0 && i!=0)
-//                    graf.dodajKrawedz(new Krawedz(punkt,punkt-1, program.mapa[i-1][j]));
-//                if (j != 0)
-//                    graf.dodajKrawedz(new Krawedz(punkt,punkt-5, program.mapa[i][j-1]));
-//
-//                punkt--;
-//            }
-//        }
-
-
-
-
 
 
 
 
                             //      ***     tworzymy tablice zawierajace wartosci najkrotszych sciezek i ich opisanie punktami         ***
+
         Najkrocej[] najkrocej = new Najkrocej[liczba_wierzcholkow];           //tablica zawierajaca tablice najkrotszych sciezek kazdego wierzcholka
         for (int zrodlo=0; zrodlo<liczba_wierzcholkow; zrodlo++) {
-            najkrocej[zrodlo] = new Najkrocej(zrodlo);
+            najkrocej[zrodlo] = new Najkrocej();
             Dijkstra najkrotszaSciezka = new Dijkstra(graf, zrodlo);
 
             for (int cel = 0; cel < liczba_wierzcholkow; cel++) {
@@ -384,32 +326,36 @@ public class Dijkstra {
         for (int i = 0; i < kombinacje.length; i++) {
             kombinacje[i] = Dijkstra.zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
         }
-        //przykladowe punkty 1 -> 12 -> 7 -> 24 -> 11 -> 1                  TODO po ogarnieciu pobierania paczek z pliku do usuniecia - ale zajme sie tym :)
         outerloop:
         for (int k=0; k<program.getRozmiarDanych(); k++) {
-            int[] przykladowe = new int[paczki_punkty.get(k).size()];                                     //to sie dobrze sprawdzilo jako wstepne testy
-            //        przykladowe[0] = 11;
-            //        przykladowe[1] = 6;
-            //        przykladowe[2] = 23;
-            //        przykladowe[3] = 10;
-
-
-            int liczba_kombinacji = kombinacje[przykladowe.length];         //przechowuje aktualna liczbe kombinacji dla danego wykonania petli, zeby kod byl bardziej czytelny
+            int[] przykladowe = new int[paczki_punkty.get(k).size()];                                     //do "przykladowe" przejda te ktore beda spelnialy warunki
             int liczba_paczek = przykladowe.length;
-            for (int i = 0; i < liczba_paczek; i++) {
-                if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) >0)
-                    przykladowe[i] = paczki_punkty.get(k).get(i);
-                else {
-                    bledy.add("Blad w " + (k+1) + " linii danych wejsciowych");
-                    continue outerloop;
+            int liczba_kombinacji = kombinacje[przykladowe.length];         //przechowuje aktualna liczbe kombinacji dla danego wykonania petli, zeby kod byl bardziej czytelny
+
+            if (k == 0) {
+                for (int i = 0; i < liczba_paczek; i++) {
+                    if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) > 0)
+                        przykladowe[i] = paczki_punkty.get(k).get(i);
+                    else
+                        bledy.add("Blad w " + (k + 1) + " linii danych wejsciowych");
+                }
+            }
+            else{
+                for (int i = 0; i < liczba_paczek; i++) {
+                    if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) >0 && (timestampy[k] > timestampy[k-1]))
+                        przykladowe[i] = paczki_punkty.get(k).get(i);
+                    else {
+                        bledy.add("Blad w " + (k+1) + " linii danych wejsciowych");
+                        continue outerloop;
+                    }
                 }
             }
 
-            int[][] cele = new int[liczba_kombinacji][liczba_paczek + 1];            //+1 bo jeszcze zostawie '0' na baze
+            int[][] cele = new int[liczba_kombinacji][liczba_paczek + 1];            //+1 bo jeszcze zostawie '0' na baze na poczatku
             Dijkstra.permutacje(przykladowe, 0, cele);                    //wszystkie kombinacje wpisuje do 'cele'
             Dijkstra.licznik_permutacji =0;
 
-            int[] wagi = new int[liczba_kombinacji];      //  wagi dla kazdej mozliwej kombinacji
+            int[] wagi = new int[liczba_kombinacji];      //  tu beda przechowywane wagi dla kazdej mozliwej kombinacji
 
             for (int j = 0; j < liczba_kombinacji; j++) {               //j - kombinacje z permutacji
                 for (int i = 0; i < (cele[j].length - 1); i++) {         //i - kolejne punkty z danej kombinacji
@@ -419,7 +365,6 @@ public class Dijkstra {
             }
 
             //przypisanie najlepszej wagi i indeksu dla ktorej kombinacji wystapila
-
             if (wagi.length >0)
                 najlepsza_waga[k] = wagi[0];
             int[] indeks = new int[program.getRozmiarDanych()];
@@ -432,7 +377,7 @@ public class Dijkstra {
 
 
             int[] tab = usunPowtorzenia(cele[indeks[k]]); //z najlepszej kombinacji usuwa sie powtorzenia
-            int[] punkty = new int[tab.length + 1];              //przechowuje ta jedna, najlepsza sciezke :O
+            int[] punkty = new int[tab.length + 1];              //przechowuje ta jedna, najlepsza sciezke :O, +1 bo jeszcze baza na koncu
             ArrayList<Integer> droga = new ArrayList<Integer>((int) ((liczba_paczek + 1) * (Math.sqrt(liczba_paczek) - 1) * 2));         //mniej wiecej oszacowana typowa dlugosc drogi
 
 
@@ -465,6 +410,10 @@ public class Dijkstra {
         srednia_waga = srednia_waga / (program.getRozmiarDanych() - bledy.size());
         System.out.println("Srednia waga tras dla wszystkich danych wyjsciowych wynosi: " + srednia_waga);
 
+        System.out.println("\nBLEDY:");                                                   //wypisanie blednych linii
+        for (int i=0; i< bledy.size(); i++){
+            System.out.println(bledy.get(i));
+        }
 
 
 
@@ -472,40 +421,9 @@ public class Dijkstra {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                    //TODO zostawilem bo moze sie przydac takie sprawdzanie,ale raczej do usuniecia
-//                                // ***      Do sprawdzania drog po punktach    ***
-//        for (int k=0; k < liczba_wierzcholkow; k++) {                                 //dla kazdego wierzcholku
-//            for (int j = 0; j < liczba_wierzcholkow; j++) {                         //droga do kazdego wierzcholka
-//
-//                for (int i = 0; i < najkrocej[k].punkty.get(j).size(); i++) {
-//                    System.out.print(najkrocej[k].punkty.get(j).get(i) + " ");      //droga okreslona przez punkty
-//                }
-//                System.out.println();
-//            }
-//            System.out.println("\n\t Z punktu " + (k+2) + "\n");
-//        }
-
-
-
-
-//                                               //     ***     wyswietlanie sciezek      ***                 //TODO to jest tak useful ze moze zostac zakomentowane na przyszlosc
-//        int zrodlo = 230;
+                                //TODO to jest tak useful ze moze zostac zakomentowane na przyszlosc
+//                                               //     ***     wyswietlanie sciezek      ***
+//        int zrodlo = 0;
 //        Dijkstra najkrotszaSciezka = new Dijkstra(graf,zrodlo);
 //
 //        for (int cel = 0; cel<graf.getLiczba_wierzcholkow(); cel++){
@@ -524,9 +442,7 @@ public class Dijkstra {
 //
 //            System.out.println();
 //        }
-        System.out.println("\nBLEDY:");
-        for (int i=0; i< bledy.size(); i++){
-            System.out.println(bledy.get(i));
-        }
+
+
     }
 }
