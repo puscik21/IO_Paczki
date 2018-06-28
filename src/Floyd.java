@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 /**
  * for v1 in V[G]
@@ -16,6 +18,7 @@ import java.util.ArrayList;
  *                  poprzednik[v1][v2] = poprzednik [u][v2]
  */
 
+
 public class Floyd {
 
     private static int liczba_wierzcholkow ;
@@ -23,14 +26,16 @@ public class Floyd {
     private static int[][] d;
     private static int inf = 10000;
     private static int licznik_permutacji =0;   //uzywany tylko przy metodzie permutacje
+    private static ArrayList<StringBuilder> raport_tras = new ArrayList<>(100);         //do zapisu raportu tras do pliku tekstowego
+
 
     public static int getLiczba_wierzcholkow(){ return liczba_wierzcholkow; }
-
 
 
     public static boolean czyMaSciezkeDo(int zrodlo, int cel){
         return d[zrodlo][cel] < inf;
     }
+
 
     private static int zwrocKombinacje(int liczba_paczek){      //do zwrocenia liczby kombinacji tras miedzy paczkami
         if (liczba_paczek == 1)
@@ -39,6 +44,7 @@ public class Floyd {
             return 0;
         return liczba_paczek * zwrocKombinacje(liczba_paczek-1);
     }
+
 
     private static void permutacje(int[] arr, int index, int[][] target){       //permutacje potrzebne sa zeby wygenerowac kazda mozliwosc kolejnosc paczek
         //aby pozniej je ze soba porownac i wybrac najkrotsza
@@ -71,6 +77,7 @@ public class Floyd {
         }
     }
 
+
     private static int[] usunPowtorzenia(int[] arr){
         int[] powtorzenia = new int[arr.length];
         int licznik = 1;
@@ -91,6 +98,17 @@ public class Floyd {
             gotowa[i] = powtorzenia[i];
         }
         return gotowa;
+    }
+
+
+    private static void zapiszDoPliku(int numer_pliku) throws FileNotFoundException {
+
+        PrintWriter zapis = new PrintWriter("trasy/trasy Floyd/trasy" + numer_pliku + ".txt");
+        while (!raport_tras.isEmpty()) {
+            zapis.println(raport_tras.remove(0));
+        }
+        raport_tras.clear();
+        zapis.close();
     }
 
 
@@ -238,6 +256,7 @@ public class Floyd {
         ArrayList<String> bledy = new ArrayList<>(10);
         int[] kombinacje = new int[8];
         int[] najlepsza_waga = new int[program.getRozmiarDanych()];
+        int licznik_danych = 1;
         for (int i = 0; i < kombinacje.length; i++) {
             kombinacje[i] = Floyd.zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
         }
@@ -310,14 +329,26 @@ public class Floyd {
                 }
             }
 
-            //Wypisywanie
-            System.out.println((k+1) +". " + "Najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ")");
-            System.out.println("A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to:");
+            // Zapis do pliku #############################################
+            // Korzystamy ze StringBuildera dla optymalizacji dzialan na Stringach
+            StringBuilder caly_string = new StringBuilder((k + 1) + ". " + "Najlepsza waga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ") \n" +
+                    "A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: \n");
+
             for (int i = 0; i < droga.size(); i++) {
-                System.out.print((droga.get(i)+1) + " ");               //+1 bo wczesniej wierzcholki byly zapisywane od 0
+                caly_string.append(droga.get(i)).append(" ");
             }
-            System.out.println();
-            System.out.println("\n\n\n");
+            caly_string.append("\n\n\n");
+            raport_tras.add(caly_string);
+            licznik_danych++;
+
+            if (licznik_danych % 100 == 0 || k == program.getRozmiarDanych()-1){
+                try {
+                    Floyd.zapiszDoPliku(licznik_danych / 100);
+                } catch (FileNotFoundException e){
+                    System.out.println("Nie udalo sie zapisac raportow tras do pliku");
+                }
+
+            }
 
         }
         double srednia_waga =0;                                                           //srednia waga
@@ -325,9 +356,10 @@ public class Floyd {
             srednia_waga += najlepsza_waga[i];
         }
         srednia_waga = srednia_waga / (program.getRozmiarDanych() - bledy.size());
+        System.out.println("\n\n\n\t\t\tRaport dzialania algorytmu Floyda\n");
         System.out.println("Srednia waga tras dla wszystkich danych wyjsciowych wynosi: " + srednia_waga);
 
-        System.out.println("\nBLEDY:");
+        System.out.println("\nBLEDY:");                                                   //wypisanie blednych linii
         for (int i=0; i< bledy.size(); i++){
             System.out.println(bledy.get(i));
         }

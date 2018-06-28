@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.PriorityQueue;
@@ -77,6 +78,7 @@ public class Dijkstra {
     private static int dlugosc_linii;
     private static int liczba_wierzcholkow;
     private static int licznik_permutacji =0;
+    private static ArrayList<StringBuilder> raport_tras = new ArrayList<>(100);         //do zapisu raportu tras do pliku tekstowego
 
     public static int getLiczba_linii() { return liczba_linii; }
 
@@ -218,6 +220,17 @@ public class Dijkstra {
     }
 
 
+    private static void zapiszDoPliku(int numer_pliku) throws FileNotFoundException {
+
+        PrintWriter zapis = new PrintWriter("trasy/trasy Dijkstra/trasy" + numer_pliku + ".txt");
+        while (!raport_tras.isEmpty()) {
+            zapis.println(raport_tras.remove(0));
+        }
+        raport_tras.clear();
+        zapis.close();
+    }
+
+
 
     //      ################################################             MAIN            ################################################       //
 
@@ -323,6 +336,7 @@ public class Dijkstra {
         ArrayList<String> bledy = new ArrayList<>(10);
         int[] kombinacje = new int[8];
         int[] najlepsza_waga = new int[program.getRozmiarDanych()];
+        int licznik_danych = 1;                     // startuje od 1 bo zakladam, ze cos bedzie
         for (int i = 0; i < kombinacje.length; i++) {
             kombinacje[i] = Dijkstra.zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
         }
@@ -342,8 +356,9 @@ public class Dijkstra {
             }
             else{
                 for (int i = 0; i < liczba_paczek; i++) {
-                    if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) >0 && (timestampy[k] > timestampy[k-1]))
+                    if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) >0 && (timestampy[k] > timestampy[k-1])) {
                         przykladowe[i] = paczki_punkty.get(k).get(i);
+                    }
                     else {
                         bledy.add("Blad w " + (k+1) + " linii danych wejsciowych");
                         continue outerloop;
@@ -388,19 +403,30 @@ public class Dijkstra {
 
             // ***      Zapisuje najlepsza droge    ***
             for (int j = 0; j < punkty.length - 1; j++) {
-                for (int i = 0; i < najkrocej[punkty[j]].punkty.get(punkty[j + 1]).size(); i++) {       //droga okreslona przez punkty
+                for (int i = 0; i < najkrocej[punkty[j]].punkty.get(punkty[j + 1]).size(); i++) {       // droga okreslona przez punkty
                     droga.add(najkrocej[punkty[j]].punkty.get(punkty[j + 1]).get(i));
                 }
             }
 
-                                                                                                                //Wypisywanie
-            System.out.println((k+1) +". " + "Najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ")");
-            System.out.println("A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to:");
-            for (int i = 0; i < droga.size(); i++) {
-                System.out.print(droga.get(i) + " ");
+            // Zapis do pliku ####################################
+            StringBuilder caly_string = new StringBuilder((k + 1) + ". " + "Najlepsza waga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ") \n" +
+                    "A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: \n");
+
+            for (int i = 0; i < droga.size(); i++)                  // dodajemy kolejne Stringi z raportem dla danej
+                caly_string.append(droga.get(i)).append(" ");       // iteracji do Arraylisty
+
+            caly_string.append("\n\n\n");
+            raport_tras.add(caly_string);
+            licznik_danych++;
+
+            if (licznik_danych % 100 == 0 || k == program.getRozmiarDanych()-1){
+                try {
+                    Dijkstra.zapiszDoPliku(licznik_danych / 100);
+                } catch (FileNotFoundException e){
+                    System.out.println("Nie udalo sie zapisac raportow tras do pliku");
+                }
+
             }
-            System.out.println();
-            System.out.println("\n\n\n");
 
         }
         double srednia_waga =0;                                                           //srednia waga
@@ -408,14 +434,13 @@ public class Dijkstra {
             srednia_waga += najlepsza_waga[i];
         }
         srednia_waga = srednia_waga / (program.getRozmiarDanych() - bledy.size());
+        System.out.println("\n\n\n\t\t\tRaport dzialania algorytmu Dijsktry\n");
         System.out.println("Srednia waga tras dla wszystkich danych wyjsciowych wynosi: " + srednia_waga);
 
         System.out.println("\nBLEDY:");                                                   //wypisanie blednych linii
         for (int i=0; i< bledy.size(); i++){
             System.out.println(bledy.get(i));
         }
-
-
 
 
 
