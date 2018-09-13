@@ -21,23 +21,23 @@ import java.util.ArrayList;
 
 public class Floyd {
 
-    private static int liczba_wierzcholkow ;
+    private int liczba_wierzcholkow ;
 
-    private static int[][] d;
-    private static int inf = 10000;
-    private static int licznik_permutacji =0;   //uzywany tylko przy metodzie permutacje
-    private static ArrayList<StringBuilder> raport_tras = new ArrayList<>(100);         //do zapisu raportu tras do pliku tekstowego
-
-
-    public static int getLiczba_wierzcholkow(){ return liczba_wierzcholkow; }
+    private int[][] d;
+    private int inf = 10000;
+    private int licznik_permutacji =0;   //uzywany tylko przy metodzie permutacje
+    private ArrayList<StringBuilder> raport_tras = new ArrayList<>(100);         //do zapisu raportu tras do pliku tekstowego
 
 
-    public static boolean czyMaSciezkeDo(int zrodlo, int cel){
+    public int getLiczba_wierzcholkow(){ return liczba_wierzcholkow; }
+
+
+    private boolean czyMaSciezkeDo(int zrodlo, int cel){
         return d[zrodlo][cel] < inf;
     }
 
 
-    private static int zwrocKombinacje(int liczba_paczek){      //do zwrocenia liczby kombinacji tras miedzy paczkami
+    private int zwrocKombinacje(int liczba_paczek){      //do zwrocenia liczby kombinacji tras miedzy paczkami
         if (liczba_paczek == 1)
             return 1;
         else if (liczba_paczek == 0)
@@ -46,7 +46,7 @@ public class Floyd {
     }
 
 
-    private static void permutacje(int[] arr, int index, int[][] target){       //permutacje potrzebne sa zeby wygenerowac kazda mozliwosc kolejnosc paczek
+    private void permutacje(int[] arr, int index, int[][] target){       //permutacje potrzebne sa zeby wygenerowac kazda mozliwosc kolejnosc paczek
         //aby pozniej je ze soba porownac i wybrac najkrotsza
         if(index >= arr.length - 1){ //If we are at the last element - nothing left to permute
 
@@ -78,7 +78,7 @@ public class Floyd {
     }
 
 
-    private static int[] usunPowtorzenia(int[] arr){
+    private int[] usunPowtorzenia(int[] arr){
         int[] powtorzenia = new int[arr.length];
         int licznik = 1;
         powtorzenia[0] = arr[0];
@@ -101,7 +101,7 @@ public class Floyd {
     }
 
 
-    private static void zapiszDoPliku(int numer_pliku) throws FileNotFoundException {
+    private void zapiszDoPliku(int numer_pliku) throws FileNotFoundException {
 
         PrintWriter zapis = new PrintWriter("trasy/trasy Floyd/trasy" + numer_pliku + ".txt");
         while (!raport_tras.isEmpty()) {
@@ -113,7 +113,7 @@ public class Floyd {
 
 
     //      ################################################             MAIN            ################################################       //
-    public static void main(String[] args) {
+    public void main() {
 
         int dlugosc_linii = Program.getDlugosc_linii();
         int liczba_linii = Program.getLiczba_linii();
@@ -137,7 +137,7 @@ public class Floyd {
             poprzednik.add(new ArrayList<ArrayList<Integer>>(liczba_wierzcholkow));
         for (int j=0; j< liczba_wierzcholkow; j++) {
             for (int i = 0; i < liczba_wierzcholkow; i++)
-                poprzednik.get(j).add(new ArrayList<Integer>((int) Math.sqrt(liczba_wierzcholkow) * 2));
+                poprzednik.get(j).add(new ArrayList<>((int) Math.sqrt(liczba_wierzcholkow) * 2));
         }
 
         ArrayList<ArrayList<Integer>> paczki_punkty = new ArrayList<>(dane.length);     //dosyc dlugo glowkowalem jak zrobic to na zwyklej podwojnej tablicy, ale tak w sumie tez jest spoko TODO rozmiar program.getrozmiardanych
@@ -196,7 +196,7 @@ public class Floyd {
 
         for (int j=0; j<liczba_wierzcholkow; j++){
             for (int i=0; i<liczba_wierzcholkow; i++){        // wstepne poprzedniki
-                if (Floyd.czyMaSciezkeDo(j, i))
+                if (czyMaSciezkeDo(j, i))
                     poprzednik.get(j).get(i).add(j);
             }
         }
@@ -224,7 +224,7 @@ public class Floyd {
         }
         for (int j=0; j<liczba_wierzcholkow; j++){
             for (int i=0; i<liczba_wierzcholkow; i++){
-                if (Floyd.czyMaSciezkeDo(j, i))
+                if (czyMaSciezkeDo(j, i))
                     poprzednik.get(j).get(i).add(i);        //to tak dla formalnosci, ze na koncu sciezki jest szukany wierzcholek
             }
         }
@@ -258,7 +258,7 @@ public class Floyd {
         int[] najlepsza_waga = new int[program.getRozmiarDanych()];
         int licznik_danych = 1;
         for (int i = 0; i < kombinacje.length; i++) {
-            kombinacje[i] = Floyd.zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
+            kombinacje[i] = zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
         }
 
         outerloop:
@@ -287,8 +287,8 @@ public class Floyd {
             }
 
             int[][] cele = new int[liczba_kombinacji][liczba_paczek + 1];            //+1 bo jeszcze zostawie '0' na baze
-            Floyd.permutacje(przykladowe, 0, cele);                    //wszystkie kombinacje wpisuje do 'cele'
-            Floyd.licznik_permutacji =0;                                        //trzeba dziada wyzerowac bo inaczej bylby wiekszy niz tablica w permutacje
+            permutacje(przykladowe, 0, cele);                    //wszystkie kombinacje wpisuje do 'cele'
+            licznik_permutacji =0;                                        //trzeba dziada wyzerowac bo inaczej bylby wiekszy niz tablica w permutacje
 
             int[] wagi = new int[liczba_kombinacji];      //  wagi dla kazdej mozliwej kombinacji
 
@@ -329,9 +329,14 @@ public class Floyd {
                 }
             }
 
-            // Zapis do pliku #############################################
-            // Korzystamy ze StringBuildera dla optymalizacji dzialan na Stringach
-            StringBuilder caly_string = new StringBuilder((k + 1) + ". " + "Najlepsza waga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ") \n" +
+            // Zapis do pliku ####################################
+            StringBuilder paczki = new StringBuilder();
+            for (int i = 0; i < paczki_punkty.get(k).size(); i++) {
+                paczki.append(paczki_punkty.get(k).get(i)+1);
+                paczki.append(" ");
+            }
+            paczki.append("\n");
+            StringBuilder caly_string = new StringBuilder((k + 1) + ". " + "Najlepsza waga dla " + timestampy[k] + ", " + kierowcy[k] + " dla paczek:\n" + paczki + "to: (" + najlepsza_waga[k] + ") \n" +
                     "A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: \n");
 
             for (int i = 0; i < droga.size(); i++) {
@@ -343,7 +348,7 @@ public class Floyd {
 
             if (licznik_danych % 100 == 0 || k == program.getRozmiarDanych()-1){
                 try {
-                    Floyd.zapiszDoPliku(licznik_danych / 100);
+                    zapiszDoPliku(licznik_danych / 100);
                 } catch (FileNotFoundException e){
                     System.out.println("Nie udalo sie zapisac raportow tras do pliku");
                 }

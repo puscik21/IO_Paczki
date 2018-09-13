@@ -7,8 +7,6 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.lang.*;
 import java.util.*;
-import static java.lang.System.out;
-import static java.lang.System.setOut;
 
 public class Dijkstra {
 
@@ -18,14 +16,14 @@ public class Dijkstra {
         private final int krawedz;  // <------- tu ma byc wierzcholek?
         private int odleglosc; //odleglosc do tej krawedzi
 
-        public OdlegloscDoKrawedzi(int krawedz, int odleglosc){
+        private OdlegloscDoKrawedzi(int krawedz, int odleglosc){
             this.krawedz = krawedz;
             this.odleglosc = odleglosc;
         }
 
-        public int getKrawedz() { return krawedz; }
+        private int getKrawedz() { return krawedz; }
 
-        public int getOdleglosc() { return odleglosc; }
+        private int getOdleglosc() { return odleglosc; }
 
         public void setOdleglosc(int odleglosc) { this.odleglosc = odleglosc; }
 
@@ -74,23 +72,25 @@ public class Dijkstra {
     private Krawedz[] najblizsza_krawedz; //krawedz z ktorej jest najblizej
     private Integer[] najmniejsza_odleglosc;
     private Queue<OdlegloscDoKrawedzi> kolejka;
-    private static int liczba_linii;
-    private static int dlugosc_linii;
-    private static int liczba_wierzcholkow;
-    private static int licznik_permutacji =0;
-    private static ArrayList<StringBuilder> raport_tras = new ArrayList<>(100);         //do zapisu raportu tras do pliku tekstowego
+    private int liczba_linii;
+    private int dlugosc_linii;
+    private int liczba_wierzcholkow;
+    private int licznik_permutacji =0;
+    private ArrayList<StringBuilder> raport_tras = new ArrayList<>(100);         //do zapisu raportu tras do pliku tekstowego
 
-    public static int getLiczba_linii() { return liczba_linii; }
+    public int getLiczba_linii() { return liczba_linii; }
 
-    public static int getDlugosc_linii() { return dlugosc_linii; }
+    public int getDlugosc_linii() { return dlugosc_linii; }
 
-    public static int getLiczba_wierzcholkow() { return liczba_wierzcholkow; }
+    public int getLiczba_wierzcholkow() { return liczba_wierzcholkow; }
 
-    public static void setLiczba_wierzcholkow(int liczba_wierzcholkow) {
-        Dijkstra.liczba_wierzcholkow = liczba_wierzcholkow;
+    private void setLiczba_wierzcholkow(int liczba) {
+        liczba_wierzcholkow = liczba;
     }
 
     //konstruktor
+    public Dijkstra(){ }
+
     public Dijkstra(Graf graf, int zrodlo) {
         //dla kazdego wierzcholka jego krawedz, z ktorej jest najblizej,
         //najkrotsze znalezione odleglosci do danego wierzcholka
@@ -133,7 +133,7 @@ public class Dijkstra {
         }
     }
     //jesli zwroci MAX_VALUE to znaczy ze wierzcholek jest nieosiagalny
-    public int getNajmniejszaOdleglosc(int v){
+    private int getNajmniejszaOdleglosc(int v){
         return najmniejsza_odleglosc[v];
     }
 
@@ -143,7 +143,7 @@ public class Dijkstra {
 
     //jesli nie ma sciezki do danego wierzcholka zwroci pusta kolekcje
     private Iterable<Krawedz> znajdzSciezkeDo(int v){
-        Deque<Krawedz> sciezka = new ArrayDeque<Krawedz>();
+        Deque<Krawedz> sciezka = new ArrayDeque<>();
         if(!czyMaSciezkeDo(v)){     //jesli nie ma sciezki zwroc pusta kolekcje
             return sciezka;
         }
@@ -156,7 +156,7 @@ public class Dijkstra {
 
     }
 
-    private static int zwrocKombinacje(int liczba_paczek){      //do zwrocenia liczby kombinacji tras miedzy paczkami
+    private int zwrocKombinacje(int liczba_paczek){      //do zwrocenia liczby kombinacji tras miedzy paczkami
         if (liczba_paczek == 1)
             return 1;
         else if (liczba_paczek == 0)
@@ -166,7 +166,7 @@ public class Dijkstra {
 
 
 
-    private static void permutacje(int[] arr, int index, int[][] target){       //permutacje potrzebne sa zeby wygenerowac kazda mozliwosc kolejnosc paczek
+    private void permutacje(int[] arr, int index, int[][] target){       //permutacje potrzebne sa zeby wygenerowac kazda mozliwosc kolejnosc paczek
                                                                                 //aby pozniej je ze soba porownac i wybrac najkrotsza
         if(index >= arr.length - 1){ //If we are at the last element - nothing left to permute
 
@@ -197,7 +197,7 @@ public class Dijkstra {
         }
     }
 
-    private static int[] usunPowtorzenia(int[] arr){
+    private int[] usunPowtorzenia(int[] arr){
         int[] powtorzenia = new int[arr.length];
         int licznik = 1;
         powtorzenia[0] = arr[0];
@@ -220,7 +220,7 @@ public class Dijkstra {
     }
 
 
-    private static void zapiszDoPliku(int numer_pliku) throws FileNotFoundException {
+    private void zapiszDoPliku(int numer_pliku) throws FileNotFoundException {
 
         PrintWriter zapis = new PrintWriter("trasy/trasy Dijkstra/trasy" + numer_pliku + ".txt");
         while (!raport_tras.isEmpty()) {
@@ -234,7 +234,7 @@ public class Dijkstra {
 
     //      ################################################             MAIN            ################################################       //
 
-    public static void main(String[] args){
+    public void main(){
 
         /** Spis info:
          * najwazniejsze zmienne:
@@ -251,7 +251,7 @@ public class Dijkstra {
         liczba_linii = Program.getLiczba_linii();
         dlugosc_linii = Program.getDlugosc_linii();
         liczba_wierzcholkow = Program.getLiczba_wierzcholkow();
-        Dijkstra.setLiczba_wierzcholkow(dlugosc_linii * (liczba_linii+1) /2);
+        setLiczba_wierzcholkow(dlugosc_linii * (liczba_linii+1) /2);
         Program program = new Program();
         program.wczytajMape();
         int[] timestampy = program.getTimestampy();
@@ -277,17 +277,17 @@ public class Dijkstra {
         for (int j=0; j<=liczba_linii-1; j+=2){
 
             for (int i=0; i<dlugosc_linii; i++){
-                if ( (punkt+1) % dlugosc_linii !=0 || punkt ==0)                                //dla wszystkich tylko nie dla ostatniego w linii
+                if ( (punkt+1) % dlugosc_linii !=0 || punkt ==0)                                // dla wszystkich tylko nie dla ostatniego w linii
                     graf.dodajKrawedz(new Krawedz(punkt,punkt+1, program.mapa[i][j]));
 
-                if (j != liczba_linii-1)                                           //dla ostatniej linijki nie dodawaj polaczen w pionie
+                if (j != liczba_linii-1)                                           // dla ostatniej linijki nie dodawaj polaczen w pionie
                     graf.dodajKrawedz(new Krawedz(punkt,punkt+dlugosc_linii, program.mapa[i][j+1]));
                 punkt++;
             }
         }
 
                                                                     //  ***     wypelnienie grafu w druga strone    ***
-        punkt = liczba_wierzcholkow-1;                 //ostatni punkt w grafie
+        punkt = liczba_wierzcholkow-1;                 // ostatni punkt w grafie
         for (int j=liczba_linii-1; j>=0; j-=2){
 
             for (int i=dlugosc_linii-1; i>=0; i--){
@@ -338,7 +338,7 @@ public class Dijkstra {
         int[] najlepsza_waga = new int[program.getRozmiarDanych()];
         int licznik_danych = 1;                     // startuje od 1 bo zakladam, ze cos bedzie
         for (int i = 0; i < kombinacje.length; i++) {
-            kombinacje[i] = Dijkstra.zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
+            kombinacje[i] = zwrocKombinacje(i);        //zeby troche przyspieszyc, od razu szuka kombinacje dla wartosci 0-6 a pozniej tylko wczytuje
         }
         outerloop:
         for (int k=0; k<program.getRozmiarDanych(); k++) {
@@ -353,22 +353,20 @@ public class Dijkstra {
                     else
                         bledy.add("Blad w " + (k + 1) + " linii danych wejsciowych");
                 }
-            }
-            else{
+            } else {
                 for (int i = 0; i < liczba_paczek; i++) {
-                    if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) >0 && (timestampy[k] > timestampy[k-1])) {
+                    if (paczki_punkty.get(k).get(i) < 230 && paczki_punkty.get(k).get(i) > 0 && (timestampy[k] > timestampy[k - 1])) {
                         przykladowe[i] = paczki_punkty.get(k).get(i);
-                    }
-                    else {
-                        bledy.add("Blad w " + (k+1) + " linii danych wejsciowych");
+                    } else {
+                        bledy.add("Blad w " + (k + 1) + " linii danych wejsciowych");
                         continue outerloop;
                     }
                 }
             }
 
             int[][] cele = new int[liczba_kombinacji][liczba_paczek + 1];            //+1 bo jeszcze zostawie '0' na baze na poczatku
-            Dijkstra.permutacje(przykladowe, 0, cele);                    //wszystkie kombinacje wpisuje do 'cele'
-            Dijkstra.licznik_permutacji =0;
+            permutacje(przykladowe, 0, cele);                    //wszystkie kombinacje wpisuje do 'cele'
+            licznik_permutacji = 0;
 
             int[] wagi = new int[liczba_kombinacji];      //  tu beda przechowywane wagi dla kazdej mozliwej kombinacji
 
@@ -376,11 +374,11 @@ public class Dijkstra {
                 for (int i = 0; i < (cele[j].length - 1); i++) {         //i - kolejne punkty z danej kombinacji
                     wagi[j] += najkrocej[cele[j][i]].odleglosci[cele[j][i + 1]];
                 }
-                wagi[j] += najkrocej[cele[j][cele[j].length-1]].odleglosci[0];      //na koncu dodaj jeszcze wage na powrot
+                wagi[j] += najkrocej[cele[j][cele[j].length - 1]].odleglosci[0];      //na koncu dodaj jeszcze wage na powrot
             }
 
             //przypisanie najlepszej wagi i indeksu dla ktorej kombinacji wystapila
-            if (wagi.length >0)
+            if (wagi.length > 0)
                 najlepsza_waga[k] = wagi[0];
             int[] indeks = new int[program.getRozmiarDanych()];
             for (int i = 1; i < liczba_kombinacji; i++) {
@@ -409,7 +407,13 @@ public class Dijkstra {
             }
 
             // Zapis do pliku ####################################
-            StringBuilder caly_string = new StringBuilder((k + 1) + ". " + "Najlepsza waga dla " + timestampy[k] + ", " + kierowcy[k] + " to: (" + najlepsza_waga[k] + ") \n" +
+            StringBuilder paczki = new StringBuilder();
+            for (int i = 0; i < paczki_punkty.get(k).size(); i++) {
+                paczki.append(paczki_punkty.get(k).get(i)+1);
+                paczki.append(" ");
+            }
+            paczki.append("\n");
+            StringBuilder caly_string = new StringBuilder((k + 1) + ". " + "Najlepsza waga dla " + timestampy[k] + ", " + kierowcy[k] + " dla paczek:\n" + paczki + "to: (" + najlepsza_waga[k] + ") \n" +
                     "A najlepsza droga dla " + timestampy[k] + ", " + kierowcy[k] + " to: \n");
 
             for (int i = 0; i < droga.size(); i++)                  // dodajemy kolejne Stringi z raportem dla danej
@@ -421,7 +425,7 @@ public class Dijkstra {
 
             if (licznik_danych % 100 == 0 || k == program.getRozmiarDanych()-1){
                 try {
-                    Dijkstra.zapiszDoPliku(licznik_danych / 100);
+                    zapiszDoPliku(licznik_danych / 100);
                 } catch (FileNotFoundException e){
                     System.out.println("Nie udalo sie zapisac raportow tras do pliku");
                 }
