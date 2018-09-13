@@ -1,0 +1,800 @@
+603. Najlepsza waga dla 1512048072, YBGWW dla paczek:
+131 48 140 120 
+to: (137) 
+A najlepsza droga dla 1512048072, YBGWW to: 
+1 22 43 44 45 66 67 88 109 130 131 132 133 112 113 114 115 116 117 118 139 140 119 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+604. Najlepsza waga dla 1512048568, ORDLP dla paczek:
+144 104 
+to: (166) 
+A najlepsza droga dla 1512048568, ORDLP to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 123 124 103 82 81 80 79 78 57 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+605. Najlepsza waga dla 1512049471, RCDUU dla paczek:
+137 59 115 15 
+to: (163) 
+A najlepsza droga dla 1512049471, RCDUU to: 
+1 22 43 44 45 46 47 48 49 70 91 92 93 114 135 136 115 116 117 118 97 98 77 78 79 58 57 36 35 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+606. Najlepsza waga dla 1512049580, UUHDG dla paczek:
+120 98 134 89 
+to: (145) 
+A najlepsza droga dla 1512049580, UUHDG to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 119 98 97 118 117 116 115 114 113 112 133 132 131 130 109 88 67 66 45 44 43 22 1 0 
+
+
+
+607. Najlepsza waga dla 1512050763, UEPZT dla paczek:
+143 57 165 
+to: (155) 
+A najlepsza droga dla 1512050763, UEPZT to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 164 163 162 141 120 99 98 77 56 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+608. Najlepsza waga dla 1512050948, ATMVF dla paczek:
+91 
+to: (64) 
+A najlepsza droga dla 1512050948, ATMVF to: 
+1 22 43 44 45 46 47 48 69 90 69 48 47 46 45 44 43 22 1 0 
+
+
+
+609. Najlepsza waga dla 1512052144, EGOHO dla paczek:
+80 
+to: (130) 
+A najlepsza droga dla 1512052144, EGOHO to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 78 57 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+610. Najlepsza waga dla 1512052395, JZNAS dla paczek:
+122 50 47 
+to: (142) 
+A najlepsza droga dla 1512052395, JZNAS to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 120 121 120 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+611. Najlepsza waga dla 1512053012, PUCOQ dla paczek:
+66 43 22 
+to: (40) 
+A najlepsza droga dla 1512053012, PUCOQ to: 
+1 22 43 44 65 44 43 42 21 0 
+
+
+
+612. Najlepsza waga dla 1512053194, XUMBT dla paczek:
+68 26 160 47 
+to: (107) 
+A najlepsza droga dla 1512053194, XUMBT to: 
+1 22 43 44 45 66 67 68 47 48 49 70 71 72 73 94 115 116 137 138 159 138 137 116 115 94 73 72 71 70 49 48 47 46 25 46 45 44 43 22 1 0 
+
+
+
+613. Najlepsza waga dla 1512054525, ZPJSB dla paczek:
+58 98 
+to: (127) 
+A najlepsza droga dla 1512054525, ZPJSB to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 77 98 97 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+614. Najlepsza waga dla 1512055092, XALHC dla paczek:
+92 86 
+to: (84) 
+A najlepsza droga dla 1512055092, XALHC to: 
+1 22 43 44 45 46 47 48 49 70 91 70 49 48 47 46 45 66 65 64 85 64 43 22 1 0 
+
+
+
+615. Najlepsza waga dla 1512055584, KLOJK dla paczek:
+141 81 63 89 
+to: (184) 
+A najlepsza droga dla 1512055584, KLOJK to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 37 38 39 60 61 62 83 82 81 80 101 100 99 120 141 140 139 118 117 116 115 114 113 112 111 110 109 88 67 66 45 44 43 22 1 0 
+
+
+
+616. Najlepsza waga dla 1512055946, WZQDW dla paczek:
+59 59 68 147 
+to: (189) 
+A najlepsza droga dla 1512055946, WZQDW to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 58 79 80 81 82 103 104 125 146 145 144 143 142 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 68 67 66 45 44 43 22 1 0 
+
+
+
+617. Najlepsza waga dla 1512057185, LWSSZ dla paczek:
+88 
+to: (58) 
+A najlepsza droga dla 1512057185, LWSSZ to: 
+1 22 43 44 45 66 87 66 45 44 43 22 1 0 
+
+
+
+618. Najlepsza waga dla 1512058429, XNUPP dla paczek:
+68 
+to: (46) 
+A najlepsza droga dla 1512058429, XNUPP to: 
+1 22 43 44 45 66 67 66 45 44 43 22 1 0 
+
+
+
+619. Najlepsza waga dla 1512058994, LGXFM dla paczek:
+47 
+to: (42) 
+A najlepsza droga dla 1512058994, LGXFM to: 
+1 22 43 44 45 46 45 44 43 22 1 0 
+
+
+
+620. Najlepsza waga dla 1512060480, TCWTQ dla paczek:
+18 57 85 15 
+to: (170) 
+A najlepsza droga dla 1512060480, TCWTQ to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 56 57 36 15 16 17 16 15 14 35 34 33 32 31 10 9 8 29 28 49 48 47 46 45 66 65 64 63 84 63 64 43 22 1 0 
+
+
+
+621. Najlepsza waga dla 1512061449, HYKKU dla paczek:
+104 134 150 
+to: (192) 
+A najlepsza droga dla 1512061449, HYKKU to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 80 81 82 103 82 81 80 101 100 99 98 97 118 117 116 115 114 113 112 133 132 131 152 151 150 149 128 107 86 65 44 43 22 1 0 
+
+
+
+622. Najlepsza waga dla 1512061702, RWJLG dla paczek:
+70 163 82 61 
+to: (168) 
+A najlepsza droga dla 1512061702, RWJLG to: 
+1 22 43 44 45 46 47 48 69 90 91 92 93 94 115 116 117 118 139 140 141 162 141 120 99 100 101 80 81 60 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+623. Najlepsza waga dla 1512063069, YFCRU dla paczek:
+44 26 102 46 
+to: (146) 
+A najlepsza droga dla 1512063069, YFCRU to: 
+1 22 43 44 45 46 25 46 47 48 49 70 71 72 73 94 115 116 117 118 97 98 99 100 101 100 99 98 97 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+624. Najlepsza waga dla 1512064511, VLCUD dla paczek:
+134 43 
+to: (84) 
+A najlepsza droga dla 1512064511, VLCUD to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 112 91 70 49 48 47 46 45 44 43 42 21 0 
+
+
+
+625. Najlepsza waga dla 1512065028, QEPWP dla paczek:
+166 36 51 106 
+to: (189) 
+A najlepsza droga dla 1512065028, QEPWP to: 
+1 22 43 44 45 46 47 48 49 50 29 8 9 10 31 32 33 34 35 56 77 98 99 120 141 162 163 164 165 164 163 162 141 140 139 118 117 116 115 114 113 112 111 110 109 108 107 106 105 84 63 64 43 22 1 0 
+
+
+
+626. Najlepsza waga dla 1512065158, NQJFX dla paczek:
+59 104 78 
+to: (166) 
+A najlepsza droga dla 1512065158, NQJFX to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 58 79 80 81 82 103 82 81 80 79 78 77 56 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+627. Najlepsza waga dla 1512066143, HNYIU dla paczek:
+48 110 79 
+to: (144) 
+A najlepsza droga dla 1512066143, HNYIU to: 
+1 22 43 44 45 46 47 48 49 28 29 8 9 10 31 32 33 34 35 36 57 78 57 36 35 34 33 32 31 52 73 94 93 92 91 90 111 110 109 88 67 66 45 44 43 22 1 0 
+
+
+
+628. Najlepsza waga dla 1512066232, ZIRCI dla paczek:
+81 
+to: (148) 
+A najlepsza droga dla 1512066232, ZIRCI to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 80 79 78 57 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+629. Najlepsza waga dla 1512067169, ZBQTG dla paczek:
+17 
+to: (136) 
+A najlepsza droga dla 1512067169, ZBQTG to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 14 15 16 15 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+630. Najlepsza waga dla 1512068231, HNYIU dla paczek:
+70 
+to: (54) 
+A najlepsza droga dla 1512068231, HNYIU to: 
+1 22 43 44 45 46 47 48 69 48 47 46 45 44 43 22 1 0 
+
+
+
+631. Najlepsza waga dla 1512069539, MHWIJ dla paczek:
+123 
+to: (154) 
+A najlepsza droga dla 1512069539, MHWIJ to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 97 98 99 100 101 122 101 100 99 98 97 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+632. Najlepsza waga dla 1512070005, IDEWX dla paczek:
+103 148 125 91 
+to: (211) 
+A najlepsza droga dla 1512070005, IDEWX to: 
+1 22 43 64 63 84 105 126 147 126 127 128 129 130 131 132 133 112 113 114 115 116 117 118 97 98 99 100 101 102 123 124 123 144 143 142 141 140 139 118 117 116 115 94 93 92 91 90 69 48 47 46 45 44 43 22 1 0 
+
+
+
+633. Najlepsza waga dla 1512071045, RWJLG dla paczek:
+141 
+to: (108) 
+A najlepsza droga dla 1512071045, RWJLG to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+634. Najlepsza waga dla 1512072346, ZIRCI dla paczek:
+76 15 13 
+to: (127) 
+A najlepsza droga dla 1512072346, ZIRCI to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 74 75 54 33 34 35 14 35 34 33 12 11 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+635. Najlepsza waga dla 1512073357, HNYIU dla paczek:
+91 140 84 
+to: (166) 
+A najlepsza droga dla 1512073357, HNYIU to: 
+1 22 43 44 45 46 47 48 69 90 91 92 93 94 115 116 117 118 139 118 97 98 99 100 101 80 81 82 83 62 61 60 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+636. Najlepsza waga dla 1512074576, JSJQT dla paczek:
+48 125 59 89 
+to: (189) 
+A najlepsza droga dla 1512074576, JSJQT to: 
+1 22 43 44 45 46 47 48 49 28 29 8 9 10 31 32 33 34 35 36 57 58 79 80 81 82 103 124 123 144 143 142 141 140 139 118 117 116 115 114 113 112 111 110 109 88 67 66 45 44 43 22 1 0 
+
+
+
+637. Najlepsza waga dla 1512075185, XVSFV dla paczek:
+62 35 164 
+to: (170) 
+A najlepsza droga dla 1512075185, XVSFV to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 37 38 39 60 61 62 83 82 103 124 123 144 143 164 163 162 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+638. Najlepsza waga dla 1512075834, ADIST dla paczek:
+115 
+to: (80) 
+A najlepsza droga dla 1512075834, ADIST to: 
+1 22 43 44 45 46 47 48 49 70 91 92 93 114 93 92 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+639. Najlepsza waga dla 1512076684, NQJFX dla paczek:
+76 116 
+to: (105) 
+A najlepsza droga dla 1512076684, NQJFX to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 74 75 96 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+640. Najlepsza waga dla 1512076781, WMCDZ dla paczek:
+133 19 
+to: (173) 
+A najlepsza droga dla 1512076781, WMCDZ to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 132 133 112 91 92 93 94 73 52 31 32 33 34 35 14 15 16 17 18 17 16 15 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+641. Najlepsza waga dla 1512077372, LOPDR dla paczek:
+40 40 74 
+to: (139) 
+A najlepsza droga dla 1512077372, LOPDR to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 37 38 39 38 37 36 35 34 33 32 31 52 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+642. Najlepsza waga dla 1512078273, WVZMB dla paczek:
+131 34 22 125 
+to: (185) 
+A najlepsza droga dla 1512078273, WVZMB to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 80 81 82 103 124 123 144 143 142 141 140 139 118 117 116 115 114 113 112 133 132 131 130 109 88 67 66 45 44 43 22 21 0 
+
+
+
+643. Najlepsza waga dla 1512079321, XTSBS dla paczek:
+160 112 70 
+to: (109) 
+A najlepsza droga dla 1512079321, XTSBS to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 137 138 159 138 137 116 115 114 113 112 111 90 69 48 47 46 45 44 43 22 1 0 
+
+
+
+644. Najlepsza waga dla 1512080492, POPTF dla paczek:
+92 157 
+to: (100) 
+A najlepsza droga dla 1512080492, POPTF to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 134 135 156 135 134 133 112 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+645. Najlepsza waga dla 1512081096, ZPJSB dla paczek:
+139 20 
+to: (184) 
+A najlepsza droga dla 1512081096, ZPJSB to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 137 138 139 118 97 98 77 78 57 36 15 16 17 18 19 18 17 16 15 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+646. Najlepsza waga dla 1512082338, STVXL dla paczek:
+137 
+to: (100) 
+A najlepsza droga dla 1512082338, STVXL to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 134 135 136 135 134 133 112 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+647. Najlepsza waga dla 1512082771, DGECF dla paczek:
+54 80 72 
+to: (139) 
+A najlepsza droga dla 1512082771, DGECF to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 78 57 36 35 34 33 32 53 52 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+648. Najlepsza waga dla 1512083447, SSWCM dla paczek:
+24 
+to: (28) 
+A najlepsza droga dla 1512083447, SSWCM to: 
+1 22 23 22 1 0 
+
+
+
+649. Najlepsza waga dla 1512084723, RCSOO dla paczek:
+96 
+to: (84) 
+A najlepsza droga dla 1512084723, RCSOO to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 95 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+650. Najlepsza waga dla 1512084918, JSJQT dla paczek:
+28 91 81 144 
+to: (170) 
+A najlepsza droga dla 1512084918, JSJQT to: 
+1 22 43 44 45 46 25 26 27 28 29 8 9 10 31 32 33 34 35 36 57 78 79 80 101 122 143 142 141 140 139 118 117 116 115 94 93 92 91 90 69 48 47 46 45 44 43 22 1 0 
+
+
+
+651. Najlepsza waga dla 1512086059, LWSSZ dla paczek:
+68 25 136 
+to: (94) 
+A najlepsza droga dla 1512086059, LWSSZ to: 
+1 22 43 44 45 66 67 68 47 48 49 70 91 112 133 134 135 134 133 112 91 70 49 48 47 46 25 24 3 2 1 0 
+
+
+
+652. Najlepsza waga dla 1512086654, IDEWX dla paczek:
+128 93 86 73 
+to: (109) 
+A najlepsza droga dla 1512086654, IDEWX to: 
+1 22 43 64 85 106 127 128 129 130 131 132 133 112 91 92 93 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+653. Najlepsza waga dla 1512087927, EGFJU dla paczek:
+156 
+to: (96) 
+A najlepsza droga dla 1512087927, EGFJU to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 154 155 154 133 112 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+654. Najlepsza waga dla 1512089367, EKEZH dla paczek:
+105 23 
+to: (163) 
+A najlepsza droga dla 1512089367, EKEZH to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 80 81 82 103 104 103 82 81 80 79 78 57 36 35 34 33 32 31 10 9 8 29 28 49 48 47 46 45 44 43 22 1 0 
+
+
+
+655. Najlepsza waga dla 1512090251, JZNAS dla paczek:
+109 169 
+to: (93) 
+A najlepsza droga dla 1512090251, JZNAS to: 
+1 22 43 44 65 86 107 108 107 128 127 148 169 168 169 148 127 126 105 84 63 64 43 22 1 0 
+
+
+
+656. Najlepsza waga dla 1512091101, TAERF dla paczek:
+146 47 86 
+to: (174) 
+A najlepsza droga dla 1512091101, TAERF to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 145 144 143 142 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 66 65 64 85 64 43 22 1 0 
+
+
+
+657. Najlepsza waga dla 1512092258, JONGY dla paczek:
+153 18 111 17 
+to: (186) 
+A najlepsza droga dla 1512092258, JONGY to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 14 15 16 17 16 15 14 35 34 33 32 31 52 73 94 93 92 91 112 133 132 131 152 131 110 89 68 67 66 45 44 43 22 1 0 
+
+
+
+658. Najlepsza waga dla 1512093136, DDERH dla paczek:
+15 44 62 
+to: (157) 
+A najlepsza droga dla 1512093136, DDERH to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 14 35 36 37 38 39 60 61 60 39 38 37 36 35 34 33 32 31 10 9 8 29 28 49 48 47 46 45 44 43 22 1 0 
+
+
+
+659. Najlepsza waga dla 1512093924, FSHPZ dla paczek:
+35 131 114 
+to: (131) 
+A najlepsza droga dla 1512093924, FSHPZ to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 33 32 31 52 73 94 115 114 113 112 133 132 131 130 109 88 67 66 45 44 43 22 1 0 
+
+
+
+660. Najlepsza waga dla 1512094043, UDHAJ dla paczek:
+94 
+to: (70) 
+A najlepsza droga dla 1512094043, UDHAJ to: 
+1 22 43 44 45 46 47 48 49 70 91 92 93 92 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+661. Najlepsza waga dla 1512095232, HFCQS dla paczek:
+89 89 41 
+to: (173) 
+A najlepsza droga dla 1512095232, HFCQS to: 
+1 22 43 44 45 66 67 88 109 110 111 90 91 92 93 94 73 52 31 32 33 34 35 36 37 38 39 40 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+662. Najlepsza waga dla 1512095910, POPTF dla paczek:
+113 129 114 
+to: (99) 
+A najlepsza droga dla 1512095910, POPTF to: 
+1 22 43 44 45 46 47 48 49 70 91 112 113 112 133 132 131 130 129 128 107 86 65 44 43 22 1 0 
+
+
+
+663. Najlepsza waga dla 1512095919, LOPDR dla paczek:
+88 
+to: (58) 
+A najlepsza droga dla 1512095919, LOPDR to: 
+1 22 43 44 45 66 87 66 45 44 43 22 1 0 
+
+
+
+664. Najlepsza waga dla 1512097166, YFCRU dla paczek:
+144 
+to: (144) 
+A najlepsza droga dla 1512097166, YFCRU to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 142 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+665. Najlepsza waga dla 1512097435, PRUFP dla paczek:
+168 16 136 
+to: (200) 
+A najlepsza droga dla 1512097435, PRUFP to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 14 15 36 57 78 99 100 121 142 143 144 145 166 167 166 145 144 143 142 141 140 139 118 117 116 115 114 135 134 133 112 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+666. Najlepsza waga dla 1512098548, MWTUS dla paczek:
+119 112 88 
+to: (118) 
+A najlepsza droga dla 1512098548, MWTUS to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 117 116 115 114 113 112 111 110 109 88 87 66 45 44 43 22 1 0 
+
+
+
+667. Najlepsza waga dla 1512098843, QQQFR dla paczek:
+90 138 
+to: (105) 
+A najlepsza droga dla 1512098843, QQQFR to: 
+1 22 43 44 45 66 67 68 89 90 91 92 93 94 115 116 137 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+668. Najlepsza waga dla 1512098899, UEPZT dla paczek:
+112 73 107 91 
+to: (97) 
+A najlepsza droga dla 1512098899, UEPZT to: 
+1 22 43 44 45 46 47 48 49 70 71 72 93 92 91 90 111 110 109 108 107 106 85 64 43 22 1 0 
+
+
+
+669. Najlepsza waga dla 1512099921, TGOSM dla paczek:
+130 159 47 
+to: (133) 
+A najlepsza droga dla 1512099921, TGOSM to: 
+1 22 43 44 65 86 107 108 129 130 131 132 133 112 113 114 115 116 137 158 137 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+670. Najlepsza waga dla 1512100336, QEPWP dla paczek:
+112 
+to: (72) 
+A najlepsza droga dla 1512100336, QEPWP to: 
+1 22 43 44 45 46 47 48 69 90 111 90 69 48 47 46 45 44 43 22 1 0 
+
+
+
+671. Najlepsza waga dla 1512101386, XUFXL dla paczek:
+25 148 
+to: (101) 
+A najlepsza droga dla 1512101386, XUFXL to: 
+1 2 3 24 25 46 45 66 65 64 63 84 105 126 147 126 105 84 63 64 43 22 1 0 
+
+
+
+672. Najlepsza waga dla 1512102639, ZUHRI dla paczek:
+74 
+to: (78) 
+A najlepsza droga dla 1512102639, ZUHRI to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+673. Najlepsza waga dla 1512103273, KLOJK dla paczek:
+94 
+to: (70) 
+A najlepsza droga dla 1512103273, KLOJK to: 
+1 22 43 44 45 46 47 48 49 70 91 92 93 92 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+674. Najlepsza waga dla 1512104161, LOPDR dla paczek:
+39 162 133 108 
+to: (176) 
+A najlepsza droga dla 1512104161, LOPDR to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 37 38 37 36 57 78 99 120 141 140 161 160 159 138 137 116 115 114 113 112 133 132 131 130 109 108 107 86 65 44 43 22 1 0 
+
+
+
+675. Najlepsza waga dla 1512105262, BHRUX dla paczek:
+35 102 
+to: (148) 
+A najlepsza droga dla 1512105262, BHRUX to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 56 77 98 99 100 101 100 99 98 97 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+676. Najlepsza waga dla 1512105804, XVSFV dla paczek:
+115 137 63 166 
+to: (190) 
+A najlepsza droga dla 1512105804, XVSFV to: 
+1 22 43 44 45 46 47 48 49 70 91 92 93 114 135 136 137 138 159 160 161 162 163 164 165 166 145 124 103 82 83 62 61 60 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+677. Najlepsza waga dla 1512107223, EGYLU dla paczek:
+25 103 19 
+to: (178) 
+A najlepsza droga dla 1512107223, EGYLU to: 
+1 2 3 24 25 46 47 48 49 70 71 72 73 94 115 116 117 118 97 98 99 100 101 102 81 60 39 18 17 16 15 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+678. Najlepsza waga dla 1512108255, JZNAS dla paczek:
+137 165 40 
+to: (181) 
+A najlepsza droga dla 1512108255, JZNAS to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 134 135 136 137 138 159 160 161 162 163 164 143 144 123 102 81 60 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+679. Najlepsza waga dla 1512108871, XALHC dla paczek:
+145 112 
+to: (157) 
+A najlepsza droga dla 1512108871, XALHC to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 143 142 141 140 139 118 117 116 115 114 113 112 111 90 69 48 47 46 45 44 43 22 1 0 
+
+
+
+680. Najlepsza waga dla 1512109404, POPTF dla paczek:
+69 92 119 
+to: (105) 
+A najlepsza droga dla 1512109404, POPTF to: 
+1 22 43 44 45 66 67 68 47 48 49 70 91 92 93 94 115 116 117 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+681. Najlepsza waga dla 1512109949, EGFJU dla paczek:
+113 24 
+to: (77) 
+A najlepsza droga dla 1512109949, EGFJU to: 
+1 22 43 44 45 46 47 48 49 70 91 112 91 70 49 48 47 46 25 24 23 22 1 0 
+
+
+
+682. Najlepsza waga dla 1512111268, QHNEK dla paczek:
+83 101 113 
+to: (160) 
+A najlepsza droga dla 1512111268, QHNEK to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 78 79 80 81 82 81 80 101 100 99 98 97 118 117 116 115 114 113 112 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+683. Najlepsza waga dla 1512112201, FARQP dla paczek:
+47 70 168 164 
+to: (170) 
+A najlepsza droga dla 1512112201, FARQP to: 
+1 22 43 44 45 46 47 48 69 90 91 92 93 94 115 116 117 118 139 140 141 142 143 144 145 166 167 166 145 144 143 164 163 162 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+684. Najlepsza waga dla 1512113151, CNERU dla paczek:
+147 80 15 
+to: (185) 
+A najlepsza droga dla 1512113151, CNERU to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 145 146 125 104 103 82 81 80 79 78 57 36 35 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+685. Najlepsza waga dla 1512114615, CNERU dla paczek:
+67 70 135 25 
+to: (92) 
+A najlepsza droga dla 1512114615, CNERU to: 
+1 22 43 44 45 66 67 68 69 90 91 112 133 134 133 112 91 70 49 48 47 46 25 24 3 2 1 0 
+
+
+
+686. Najlepsza waga dla 1512115146, VSMOF dla paczek:
+17 29 148 
+to: (192) 
+A najlepsza droga dla 1512115146, VSMOF to: 
+1 22 43 44 45 46 47 48 49 28 29 8 9 10 31 32 33 34 35 14 15 16 15 14 35 34 33 32 31 52 73 94 93 92 91 112 133 132 131 130 129 128 127 126 147 126 105 84 63 64 43 22 1 0 
+
+
+
+687. Najlepsza waga dla 1512116383, BEOOF dla paczek:
+111 
+to: (72) 
+A najlepsza droga dla 1512116383, BEOOF to: 
+1 22 43 44 45 66 67 68 89 110 89 68 67 66 45 44 43 22 1 0 
+
+
+
+688. Najlepsza waga dla 1512117483, CBJLY dla paczek:
+168 21 147 
+to: (201) 
+A najlepsza droga dla 1512117483, CBJLY to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 145 166 167 146 125 104 103 82 83 62 41 20 41 40 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+689. Najlepsza waga dla 1512118184, VBVCM dla paczek:
+78 81 124 122 
+to: (171) 
+A najlepsza droga dla 1512118184, VBVCM to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 56 77 78 79 80 81 102 123 144 143 142 121 120 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+690. Najlepsza waga dla 1512118486, IDEWX dla paczek:
+18 84 
+to: (174) 
+A najlepsza droga dla 1512118486, IDEWX to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 14 15 16 17 18 19 20 41 62 83 62 61 60 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+691. Najlepsza waga dla 1512118504, UQIKA dla paczek:
+148 65 101 14 
+to: (178) 
+A najlepsza droga dla 1512118504, UQIKA to: 
+1 22 43 64 63 84 105 126 147 126 127 128 129 130 131 132 133 112 113 114 115 116 117 118 97 98 99 100 99 98 77 56 35 34 13 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+692. Najlepsza waga dla 1512119664, UBQWA dla paczek:
+117 
+to: (90) 
+A najlepsza droga dla 1512119664, UBQWA to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+693. Najlepsza waga dla 1512120128, BHRTA dla paczek:
+99 102 84 
+to: (162) 
+A najlepsza droga dla 1512120128, BHRTA to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 97 98 99 100 101 80 81 82 83 62 61 60 39 38 37 36 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+694. Najlepsza waga dla 1512120906, PUCOQ dla paczek:
+168 141 60 15 
+to: (196) 
+A najlepsza droga dla 1512120906, PUCOQ to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 145 166 167 166 145 124 103 82 81 80 59 58 57 36 35 14 35 34 33 32 31 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+695. Najlepsza waga dla 1512121101, TIOZO dla paczek:
+59 130 70 83 
+to: (191) 
+A najlepsza droga dla 1512121101, TIOZO to: 
+1 22 43 44 65 86 107 108 129 130 131 132 133 112 113 114 115 116 117 118 97 98 99 100 101 80 81 82 81 80 79 58 57 36 35 34 33 32 31 10 9 8 29 28 49 48 69 48 47 46 45 44 43 22 1 0 
+
+
+
+696. Najlepsza waga dla 1512122533, CNERU dla paczek:
+41 92 163 
+to: (174) 
+A najlepsza droga dla 1512122533, CNERU to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 37 38 39 40 39 38 37 36 57 78 99 120 141 162 141 140 139 118 117 116 115 94 93 92 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+697. Najlepsza waga dla 1512123212, DJLJT dla paczek:
+85 13 118 
+to: (139) 
+A najlepsza droga dla 1512123212, DJLJT to: 
+1 22 43 64 63 84 63 64 65 66 45 46 47 48 49 70 71 72 73 94 115 116 117 116 115 94 73 52 31 32 33 12 11 10 9 8 7 6 5 4 3 2 1 0 
+
+
+
+698. Najlepsza waga dla 1512123320, MWTUS dla paczek:
+147 
+to: (164) 
+A najlepsza droga dla 1512123320, MWTUS to: 
+1 22 43 44 45 46 47 48 49 70 71 72 73 94 115 116 117 118 139 140 141 142 143 144 145 146 145 144 143 142 141 140 139 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+699. Najlepsza waga dla 1512123906, JDCDX dla paczek:
+59 67 91 
+to: (144) 
+A najlepsza droga dla 1512123906, JDCDX to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 57 58 57 36 35 34 33 32 31 52 73 94 93 92 91 90 69 68 67 66 45 44 43 22 1 0 
+
+
+
+700. Najlepsza waga dla 1512124845, UEPZT dla paczek:
+68 120 
+to: (123) 
+A najlepsza droga dla 1512124845, UEPZT to: 
+1 22 43 44 45 66 67 68 47 48 49 70 71 72 73 94 115 116 117 118 119 118 117 116 115 94 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+701. Najlepsza waga dla 1512125522, PXCFO dla paczek:
+61 77 
+to: (158) 
+A najlepsza droga dla 1512125522, PXCFO to: 
+1 2 3 4 5 6 7 8 9 10 31 32 33 34 35 36 37 38 39 60 39 38 37 36 57 56 55 76 75 74 73 72 71 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
+702. Najlepsza waga dla 1512126469, OUJGO dla paczek:
+158 
+to: (110) 
+A najlepsza droga dla 1512126469, OUJGO to: 
+1 22 43 44 45 46 47 48 49 70 91 112 133 134 135 156 157 156 135 134 133 112 91 70 49 48 47 46 45 44 43 22 1 0 
+
+
+
